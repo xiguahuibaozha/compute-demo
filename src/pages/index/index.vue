@@ -105,10 +105,6 @@ const onClick = (t) => {
     }
     
     switch (t) {
-      case '-':
-        if(!num.value.length){
-          num.value.push('-')
-        }
       case 'SW':
         // if(currentBtnx.value === 'btns5x5'){
         //   currentBtnx.value = 'btns4x4'
@@ -162,6 +158,10 @@ const onClick = (t) => {
         }
         break;
       default:
+        if(t === '-' && !num.value.length){
+          num.value.push('-')
+          break;
+        }
         if(num.value.length){
           if(num.value.join('').startsWith('.')){
             formula.value.push(num.value.join(''))
